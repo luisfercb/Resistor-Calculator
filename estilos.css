@@ -1,0 +1,26 @@
+body {
+    background-color: white;
+  }
+div.main {
+    background-color: whitesmoke;
+    border-style: solid;
+    border-color: gray;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 350px;
+    margin-left: 350px;
+    padding: 10px;
+}
+
+  h1 {
+    color: blue;
+    text-align: center;
+  }
+  h3 {
+      color: darkblue;
+      text-align: center;
+  }
+
+  p {
+    color: red;
+  }
