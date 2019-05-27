@@ -40,7 +40,7 @@ function calcule() {
     let digito3 = getValor(terceraBanda.value);
     let unidades = " Ohms";
     let resistencia = (digito1*10 + digito2) * Math.pow(10, digito3); 
-    console.log(digito1, digito2, digito3);
+ //   console.log(digito1, digito2, digito3);
 
     if (resistencia >= 1000) {
         resistencia = resistencia / 1000;
