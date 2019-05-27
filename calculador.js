@@ -1,12 +1,15 @@
-class codigo {
-    constructor(color, numero, multip) {
-        this.color = color;
-        this.numero = numero;
-        this.multip = multip;
-    }
-}
 
-var codigoColores = ["negro", "cafe", "rojo", "naranja", "amarillo", "verde", "azul", "violeta", "gris", "blanco"];
+var codigoColores = [{color:"negro", valor:0},
+                    {color:"cafe", valor:1},
+                    {color:"rojo", valor:2}, 
+                    {color:"naranja", valor:3},
+                    {color:"amarillo", valor:4},
+                    {color:"verde", valor:5},
+                    {color:"azul", valor:6},
+                    {color:"violeta", valor:7},
+                    {color:"gris", valor:8},
+                    {color:"blanco", valor:9}
+    ]; 
 
 var primeraBanda = document.getElementById("banda1");
 var segundaBanda = document.getElementById("banda2");
@@ -18,64 +21,17 @@ var elBotonC = document.getElementById("botonc");
 elBoton.addEventListener("click", calcule);
 elBotonC.addEventListener("click", getColores);
 
-var NEGRO = new codigo("negro", 0, 0);
-var CAFE = new codigo("cafe", 1, 1);
-var ROJO = new codigo("rojo", 2, 2);
-var NARANJA = new codigo("naranja", 3, 3);
-var AMARILLO = new codigo("amarillo", 4, 4);
-var VERDE = new codigo("verde", 5, 5);
-var AZUL = new codigo("azul", 6, 6);
-var VIOLETA = new codigo("violeta", 7, 7);
-var GRIS = new codigo("gris", 8, 8);
-var BLANCO = new codigo("blanco", 9, 9);
-
-
 function getValor(banda) {
-    switch (banda)
-    {
-        case "negro":
-            return parseInt(NEGRO.numero);
-            break;
-        
-        case "cafe":
-            return parseInt(CAFE.numero);
-            break;
-        
-        case "rojo":
-            return parseInt(ROJO.numero);
-            break;
-        
-        case "naranja":
-            return parseInt(NARANJA.numero);
-            break;
-        
-        case "amarillo":
-            return parseInt(AMARILLO.numero);
-            break;
-        
-        case "verde":
-            return parseInt(VERDE.numero);
-            break;
-        
-        case "azul":
-            return parseInt(AZUL.numero);
-            break;
-        
-        case "violeta":
-            return parseInt(VIOLETA.numero);
-            break;
-        
-        case "gris":
-            return parseInt(GRIS.numero);
-            break;
-        
-        case "blanco":
-            return parseInt(BLANCO.numero);
-            break;
-        default:
-            return parseInt(NEGRO.numero);
+    let count=0, paso=true;
+    while (paso){
+        if (banda != codigoColores[count].color){
+            count += 1;
+        }
+        else {
+            paso = false;
+        }
     }
-        
+    return codigoColores[count].valor;
 }
 
 function calcule() {
@@ -113,5 +69,5 @@ function getColores() {
       }
     }
     var tercerColor = j;
-    alert("Los colores son: " + codigoColores[primerColor] + ", " + codigoColores[segundoColor] + ", " + codigoColores[tercerColor]);
+    alert("Los colores son: " + codigoColores[primerColor].color + ", " + codigoColores[segundoColor].color + ", " + codigoColores[tercerColor].color);
   }
