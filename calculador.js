@@ -35,39 +35,37 @@ function getValor(banda) {
 }
 
 function calcule() {
-    var digito1 = getValor(primeraBanda.value);
-    var digito2 = getValor(segundaBanda.value);
-    var digito3 = getValor(terceraBanda.value);
-    var unidades = " Ohms";
-    var resistencia = (digito1*10 + digito2) * Math.pow(10, digito3); 
+    let digito1 = getValor(primeraBanda.value);
+    let digito2 = getValor(segundaBanda.value);
+    let digito3 = getValor(terceraBanda.value);
+    let unidades = " Ohms";
+    let resistencia = (digito1*10 + digito2) * Math.pow(10, digito3); 
     console.log(digito1, digito2, digito3);
 
-if (resistencia >= 1000) {
-    resistencia = resistencia / 1000;
-    unidades = "K" + unidades;
-}
-    
+    if (resistencia >= 1000) {
+        resistencia = resistencia / 1000;
+        unidades = "K" + unidades;
+    } 
     alert("El valor de la resistencia es de: " + resistencia + unidades);
-  
 }
 
 function getColores() {
-    var resistencia = parseInt(valor.value);
-    var i = 10;
+    let resistencia = parseInt(valor.value);
+    let i = 10;
     while ((resistencia/i) > 1) {
       i = i * 10;
     }
     i = i / 10;
-    var primerColor = Math.floor(resistencia / i);
+    let primerColor = Math.floor(resistencia / i);
     i = i / 10;
-    var segundoColor = Math.floor((resistencia % (i * 10)) / i);
-    var j = 0;
+    let segundoColor = Math.floor((resistencia % (i * 10)) / i);
+    let j = 0;
     if (i > 1) {
       j = 1;
       while ((i / Math.pow(10, j)) > 1) {
         j++;
       }
     }
-    var tercerColor = j;
+    let tercerColor = j;
     alert("Los colores son: " + codigoColores[primerColor].color + ", " + codigoColores[segundoColor].color + ", " + codigoColores[tercerColor].color);
   }
