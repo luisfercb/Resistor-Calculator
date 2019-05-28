@@ -14,11 +14,10 @@ var codigoColores = [{color:"negro", valor:0},
 var primeraBanda = document.getElementById("banda1");
 var segundaBanda = document.getElementById("banda2");
 var terceraBanda = document.getElementById("banda3");
-var valor = document.getElementById("valorResistencia");
 var elBoton = document.getElementById("boton");
-var elBotonC = document.getElementById("botonc");
-
 elBoton.addEventListener("click", calcule);
+var valor = document.getElementById("valorResistencia");
+var elBotonC = document.getElementById("botonc");
 elBotonC.addEventListener("click", getColores);
 
 function getValor(banda) {
@@ -41,7 +40,6 @@ function calcule() {
     let unidades = " Ohms";
     let resistencia = (digito1*10 + digito2) * Math.pow(10, digito3); 
  //   console.log(digito1, digito2, digito3);
-
     if (resistencia >= 1000) {
         resistencia = resistencia / 1000;
         unidades = "K" + unidades;
