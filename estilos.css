@@ -4,7 +4,6 @@ body {
 .main {
     position: absolute;
     width: 600px;
-    height: 510px;
     position: absolute;
     left: 50%;
     margin-left: -300px;
@@ -34,22 +33,37 @@ p {
   }
 
 .bloque {
-  position: relative;
-  width: 550px;
-  padding: 0px 25px;
-  right: 10px;
+  float: left;
+  width: 200px;
   }
 
-.contenedor {
+.contenedor1 {
   position: relative;
-  width: 550px;
-  height: 20px;
-  padding: 0px 20px;
+  width: 600px;
+  height: 60px;
+  padding: 0px 0px;
   }
+
+.contenedor2 {
+  position: relative;
+  width: 600px;
+  height: 30px;
+  padding: 0px 0px;
+  margin: 40px 0px;
+  }
+
+.contenedor3 {
+    position: relative;
+    width: 600px;
+    height: 30px;
+    padding: 0px 0px;
+    margin: 20px 40px;
+    }
 
 .boton {
   float: left;
-  margin: auto;
+  text-align: center;
+  margin: 0px 0px 0px 40px;
 }
 
 .resultado {
@@ -64,17 +78,18 @@ p {
   color: darkblue;
   font-size: 16px;
   font-weight: bold;
-
+  margin-right: 40px;
 }
 
 .cajatexto {
   width: 100px;
-  height: 5px;
-  float: right;
-  margin-right: 220px;
+  height: 20px;
+  margin-top: 10px;
 }
 
-.rojo {
-  background-color: red;
-  color: black;
+.textoBanda {
+  float: left;
+  width: 200px;
+  height: 30px;
+  text-align:center;
 }

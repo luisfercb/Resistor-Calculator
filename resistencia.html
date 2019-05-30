@@ -12,58 +12,38 @@
     <p>
         <H3>Calcular el valor de la resistencia</H3>
     </p>
-    <div class="bloque">Color de la primera Banda <input class="cajatexto" type="text" list="colores" name="browser" id="banda1">
-        <datalist id="colores">
-          <option value="negro">
-          <option value="cafe">
-          <option class="rojo" value="rojo">
-          <option value="naranja">
-          <option value="amarillo">
-          <option value="verde">
-          <option value="azul">
-          <option value="violeta">
-          <option value="gris">
-          <option value="blanco">
-        </datalist> <br /> <br />
+
+    <datalist id="colores">
+      <option value="negro">
+      <option value="cafe">
+      <option value="rojo">
+      <option value="naranja">
+      <option value="amarillo">
+      <option value="verde">
+      <option value="azul">
+      <option value="violeta">
+      <option value="gris">
+      <option value="blanco">
+    </datalist>
+    <div class="contenedor1">
+      <div class="textoBanda">Primera Banda
+        <div class="bloque"><input class="cajatexto" type="text" list="colores" name="browser" id="banda1"></div>
+      </div>
+      <div class="textoBanda">Segunda Banda
+        <div class="bloque"><input class="cajatexto" type="text" list="colores" name="browser" id="banda2"></div>
+      </div>
+      <div class="textoBanda">Tercera Banda
+        <div class="bloque"><input class="cajatexto" type="text" list="colores" name="browser" id="banda3"></div>
+      </div>
     </div>
-    <div class="bloque">Color de la segunda Banda <input class="cajatexto" type="text" list="colores" name="browser" id="banda2">
-        <datalist id="colores">
-          <option value="negro">
-          <option value="cafe">
-          <option value="rojo">
-          <option value="naranja">
-          <option value="amarillo">
-          <option value="verde">
-          <option value="azul">
-          <option value="violeta">
-          <option value="gris">
-          <option value="blanco">
-        </datalist> <br /> <br />
-    </div>
-    <div class="bloque">Color de la tercera Banda <input class="cajatexto" type="text" list="colores" name="browser" id="banda3">
-        <datalist id="colores">
-          <option value="negro">
-          <option value="cafe">
-          <option value="rojo">
-          <option value="naranja">
-          <option value="amarillo">
-          <option value="verde">
-          <option value="azul">
-          <option value="violeta">
-          <option value="gris">
-          <option value="blanco">
-        </datalist> <br /> <br /><br />
-    </div> 
-    <div class="contenedor">   
+    <div class="contenedor2">   
       <input class="boton" type="button" value="Valor" id="boton">
       <div class="resultado" id="elvalor">El valor de la resistencia es: 0 Ω</div>
     </div>
-    <br /><br />
     <Hr />
-    <p><H3>Determinar los colores de la resistencia</H3></p>
-        <div class="bloque">El valor de la resistencia es:<input class="cajatexto" type="text" id="valorResistencia"/></div>
-          <br /><br />
-    <div class="contenedor"> 
+    <H3>Determinar los colores de la resistencia</H3>
+        <div class="contenedor3">El valor de la resistencia es:<input class="cajatexto" type="text" id="valorResistencia"/> Ω</div>
+    <div class="contenedor2"> 
       <input class="boton" type="button" id="botonc" value="Colores" />
       <div class="resultado" id="loscolores">Los colores son:</div>
     </div>   
