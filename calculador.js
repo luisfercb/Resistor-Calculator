@@ -1,14 +1,14 @@
 
-var codigoColores = [{color:"negro", valor:0},
-                    {color:"cafe", valor:1},
-                    {color:"rojo", valor:2}, 
-                    {color:"naranja", valor:3},
-                    {color:"amarillo", valor:4},
-                    {color:"verde", valor:5},
-                    {color:"azul", valor:6},
-                    {color:"violeta", valor:7},
-                    {color:"gris", valor:8},
-                    {color:"blanco", valor:9}
+var codigoColores = [{color:"Negro", valor:0},
+                    {color:"Cafe", valor:1},
+                    {color:"Rojo", valor:2}, 
+                    {color:"Naranja", valor:3},
+                    {color:"Amarillo", valor:4},
+                    {color:"Verde", valor:5},
+                    {color:"Azul", valor:6},
+                    {color:"Violeta", valor:7},
+                    {color:"Gris", valor:8},
+                    {color:"Blanco", valor:9}
     ]; 
 
 var primeraBanda = document.getElementById("banda1");
@@ -39,12 +39,10 @@ function calcule() {
     let digito3 = getValor(terceraBanda.value);
     let unidades = " Ω";
     let resistencia = (digito1*10 + digito2) * Math.pow(10, digito3); 
- //   console.log(digito1, digito2, digito3);
     if (resistencia >= 1000) {
         resistencia = resistencia / 1000;
         unidades = "K" + unidades;
     } 
-//    alert("El valor de la resistencia es de: " + resistencia + unidades);
     document.getElementById('elvalor').innerHTML = "El valor de la resistencia es: " + resistencia + unidades;
 }
 
@@ -66,6 +64,22 @@ function getColores() {
       }
     }
     let tercerColor = j;
-//    alert("Los colores son: " + codigoColores[primerColor].color + ", " + codigoColores[segundoColor].color + ", " + codigoColores[tercerColor].color);
-    document.getElementById('loscolores').innerHTML = "Los colores son: " + codigoColores[primerColor].color + ", " + codigoColores[segundoColor].color + ", " + codigoColores[tercerColor].color;
+    primerColor = codigoColores[primerColor].color;
+    segundoColor = codigoColores[segundoColor].color;
+    tercerColor = codigoColores[tercerColor].color;
+    let respHtml = "<div class=\"circ2 " + primerColor + "\"></div><div class=\"circ2 " + segundoColor + "\"></div><div class=\"circ2 " + tercerColor + "\"></div>"
+    console.log(respHtml);
+    document.getElementById('loscolores').innerHTML = respHtml + primerColor + " | " + segundoColor + " | " + tercerColor;
+}
+
+function bkgndBand(bandain) {
+    if (bandain=="banda1") {
+        document.getElementById("rcolor1").setAttribute("class", 'circ ' + primeraBanda.value);
+    }
+    if (bandain=="banda2") {
+        document.getElementById("rcolor2").setAttribute("class", 'circ ' + segundaBanda.value);
+    }
+    if (bandain=="banda3") {
+        document.getElementById("rcolor3").setAttribute("class", 'circ ' + terceraBanda.value);
+    }
 }
