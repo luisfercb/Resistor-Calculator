@@ -37,14 +37,15 @@ function calcule() {
     let digito1 = getValor(primeraBanda.value);
     let digito2 = getValor(segundaBanda.value);
     let digito3 = getValor(terceraBanda.value);
-    let unidades = " Ohms";
+    let unidades = " Ω";
     let resistencia = (digito1*10 + digito2) * Math.pow(10, digito3); 
  //   console.log(digito1, digito2, digito3);
     if (resistencia >= 1000) {
         resistencia = resistencia / 1000;
         unidades = "K" + unidades;
     } 
-    alert("El valor de la resistencia es de: " + resistencia + unidades);
+//    alert("El valor de la resistencia es de: " + resistencia + unidades);
+    document.getElementById('elvalor').innerHTML = "El valor de la resistencia es: " + resistencia + unidades;
 }
 
 function getColores() {
@@ -65,5 +66,6 @@ function getColores() {
       }
     }
     let tercerColor = j;
-    alert("Los colores son: " + codigoColores[primerColor].color + ", " + codigoColores[segundoColor].color + ", " + codigoColores[tercerColor].color);
-  }
+//    alert("Los colores son: " + codigoColores[primerColor].color + ", " + codigoColores[segundoColor].color + ", " + codigoColores[tercerColor].color);
+    document.getElementById('loscolores').innerHTML = "Los colores son: " + codigoColores[primerColor].color + ", " + codigoColores[segundoColor].color + ", " + codigoColores[tercerColor].color;
+}
