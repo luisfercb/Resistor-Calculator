@@ -1,117 +1,85 @@
-class codigo {
-    constructor(color, numero, multip) {
-        this.color = color;
-        this.numero = numero;
-        this.multip = multip;
-    }
-}
 
-var codigoColores = ["negro", "cafe", "rojo", "naranja", "amarillo", "verde", "azul", "violeta", "gris", "blanco"];
+var codigoColores = [{color:"Negro", valor:0},
+                    {color:"Cafe", valor:1},
+                    {color:"Rojo", valor:2}, 
+                    {color:"Naranja", valor:3},
+                    {color:"Amarillo", valor:4},
+                    {color:"Verde", valor:5},
+                    {color:"Azul", valor:6},
+                    {color:"Violeta", valor:7},
+                    {color:"Gris", valor:8},
+                    {color:"Blanco", valor:9}
+    ]; 
 
 var primeraBanda = document.getElementById("banda1");
 var segundaBanda = document.getElementById("banda2");
 var terceraBanda = document.getElementById("banda3");
-var valor = document.getElementById("valorResistencia");
 var elBoton = document.getElementById("boton");
-var elBotonC = document.getElementById("botonc");
-
 elBoton.addEventListener("click", calcule);
+var valor = document.getElementById("valorResistencia");
+var elBotonC = document.getElementById("botonc");
 elBotonC.addEventListener("click", getColores);
 
-var NEGRO = new codigo("negro", 0, 0);
-var CAFE = new codigo("cafe", 1, 1);
-var ROJO = new codigo("rojo", 2, 2);
-var NARANJA = new codigo("naranja", 3, 3);
-var AMARILLO = new codigo("amarillo", 4, 4);
-var VERDE = new codigo("verde", 5, 5);
-var AZUL = new codigo("azul", 6, 6);
-var VIOLETA = new codigo("violeta", 7, 7);
-var GRIS = new codigo("gris", 8, 8);
-var BLANCO = new codigo("blanco", 9, 9);
-
-
 function getValor(banda) {
-    switch (banda)
-    {
-        case "negro":
-            return parseInt(NEGRO.numero);
-            break;
-        
-        case "cafe":
-            return parseInt(CAFE.numero);
-            break;
-        
-        case "rojo":
-            return parseInt(ROJO.numero);
-            break;
-        
-        case "naranja":
-            return parseInt(NARANJA.numero);
-            break;
-        
-        case "amarillo":
-            return parseInt(AMARILLO.numero);
-            break;
-        
-        case "verde":
-            return parseInt(VERDE.numero);
-            break;
-        
-        case "azul":
-            return parseInt(AZUL.numero);
-            break;
-        
-        case "violeta":
-            return parseInt(VIOLETA.numero);
-            break;
-        
-        case "gris":
-            return parseInt(GRIS.numero);
-            break;
-        
-        case "blanco":
-            return parseInt(BLANCO.numero);
-            break;
-        default:
-            return parseInt(NEGRO.numero);
+    let count=0, paso=true;
+    while (paso){
+        if (banda != codigoColores[count].color){
+            count += 1;
+        }
+        else {
+            paso = false;
+        }
     }
-        
+    return codigoColores[count].valor;
 }
 
 function calcule() {
-    var digito1 = getValor(primeraBanda.value);
-    var digito2 = getValor(segundaBanda.value);
-    var digito3 = getValor(terceraBanda.value);
-    var unidades = " Ohms";
-    var resistencia = (digito1*10 + digito2) * Math.pow(10, digito3); 
-    console.log(digito1, digito2, digito3);
-
-if (resistencia >= 1000) {
-    resistencia = resistencia / 1000;
-    unidades = "K" + unidades;
-}
-    
-    alert("El valor de la resistencia es de: " + resistencia + unidades);
-  
+    let digito1 = getValor(primeraBanda.value);
+    let digito2 = getValor(segundaBanda.value);
+    let digito3 = getValor(terceraBanda.value);
+    let unidades = " Ω";
+    let resistencia = (digito1*10 + digito2) * Math.pow(10, digito3); 
+    if (resistencia >= 1000) {
+        resistencia = resistencia / 1000;
+        unidades = "K" + unidades;
+    } 
+    document.getElementById('elvalor').innerHTML = "El valor de la resistencia es: " + resistencia + unidades;
 }
 
 function getColores() {
-    var resistencia = parseInt(valor.value);
-    var i = 10;
+    let resistencia = parseInt(valor.value);
+    let i = 10;
     while ((resistencia/i) > 1) {
       i = i * 10;
     }
     i = i / 10;
-    var primerColor = Math.floor(resistencia / i);
+    let primerColor = Math.floor(resistencia / i);
     i = i / 10;
-    var segundoColor = Math.floor((resistencia % (i * 10)) / i);
-    var j = 0;
+    let segundoColor = Math.floor((resistencia % (i * 10)) / i);
+    let j = 0;
     if (i > 1) {
       j = 1;
       while ((i / Math.pow(10, j)) > 1) {
         j++;
       }
     }
-    var tercerColor = j;
-    alert("Los colores son: " + codigoColores[primerColor] + ", " + codigoColores[segundoColor] + ", " + codigoColores[tercerColor]);
-  }
+    let tercerColor = j;
+    primerColor = codigoColores[primerColor].color;
+    segundoColor = codigoColores[segundoColor].color;
+    tercerColor = codigoColores[tercerColor].color;
+    let respHtml = "<div class=\"circ2 " + primerColor + "\"></div><div class=\"circ2 " + segundoColor + "\"></div><div class=\"circ2 " + tercerColor + "\"></div>"
+    console.log(respHtml);
+    document.getElementById('loscolores').innerHTML = respHtml + primerColor + " | " + segundoColor + " | " + tercerColor;
+}
+
+function bkgndBand(bandain) {
+    if (bandain=="banda1") {
+        document.getElementById("rcolor1").setAttribute("class", 'circ ' + primeraBanda.value);
+    }
+    if (bandain=="banda2") {
+        document.getElementById("rcolor2").setAttribute("class", 'circ ' + segundaBanda.value);
+    }
+    if (bandain=="banda3") {
+        document.getElementById("rcolor3").setAttribute("class", 'circ ' + terceraBanda.value);
+    }
+}

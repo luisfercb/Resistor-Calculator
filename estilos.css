@@ -1,26 +1,191 @@
 body {
     background-color: white;
   }
-div.main {
+.main {
+    position: absolute;
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    margin-left: -300px;
     background-color: whitesmoke;
     border-style: solid;
     border-color: gray;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    margin-right: 350px;
-    margin-left: 350px;
-    padding: 10px;
+    padding: 0px;
 }
 
-  h1 {
-    color: blue;
+h1 {
+    background-color: darkgrey;
+    color: darkblue;
     text-align: center;
-  }
-  h3 {
-      color: darkblue;
-      text-align: center;
+    margin: 0px;
+    padding:20px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
   }
 
-  p {
-    color: red;
+h3 {
+    color: darkblue;
+    text-align: center;
   }
+
+p {
+  text-align: center;
+  }
+
+.bloque {
+  float: left;
+  width: 200px;
+  }
+
+.contenedor1 {
+  position: relative;
+  width: 600px;
+  height: 60px;
+  padding: 0px 0px;
+  }
+
+.contenedor2 {
+  position: relative;
+  width: 600px;
+  height: 30px;
+  padding: 0px 0px;
+  margin: 40px 0px;
+  }
+
+.contenedor3 {
+    position: relative;
+    width: 600px;
+    height: 30px;
+    padding: 0px 0px;
+    margin: 20px 40px;
+    }
+
+.boton {
+  float: left;
+  text-align: center;
+  margin: 0px 0px 0px 40px;
+}
+
+.resultado {
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px;
+  width: 400px;
+  float: right;
+  padding: 3px 10px;
+  background-color: lightgray;
+  text-align: right;
+  color: darkblue;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 40px;
+}
+
+.cajatexto {
+  float: left;
+  width: 100px;
+  height: 20px;
+  margin: 10px 0px 0px 35px;
+}
+
+.cajatexto1 {
+  width: 100px;
+  height: 20px;
+  margin: 10px 0px 0px 0spx;
+}
+
+.textoBanda {
+  float: left;
+  width: 200px;
+  height: 30px;
+  text-align:center;
+}
+
+.circ {
+  border-radius: 50%;
+  float:right;
+  margin: 15px 35px 0px 0px;
+}
+
+.circ2 {
+  border-radius: 50%;
+  float:left;
+  margin: 0px 20px 0px 0px;
+}
+
+.sinColor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid gray;
+}
+
+.Negro {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border: 2px solid gray;
+}
+
+.Cafe {
+  width: 20px;
+  height: 20px;
+  background-color: brown;
+  border: 2px solid gray;
+}
+
+.Rojo {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border: 2px solid gray;
+}
+
+.Naranja {
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  border: 2px solid gray;
+}
+
+.Amarillo {
+  width: 20px;
+  height: 20px;
+  background-color: yellow;
+  border: 2px solid gray;
+}
+
+.Verde {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border: 2px solid gray;
+}
+
+.Azul {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  border: 2px solid gray;
+}
+
+.Violeta {
+  width: 20px;
+  height: 20px;
+  background-color: purple;
+  border: 2px solid gray;
+ }
+
+.Gris{
+  width: 20px;
+  height: 20px;
+  background-color: gray;
+  border: 2px solid gray;
+}
+
+.Blanco {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 2px solid gray;
+}
