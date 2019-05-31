@@ -55,10 +55,10 @@ p {
 
 .contenedor3 {
     position: relative;
-    width: 600px;
+    width: 540px;
     height: 30px;
-    padding: 0px 0px;
-    margin: 20px 40px;
+    padding: 0px 30px;
+    margin: 0px 0px;
     }
 
 .boton {
@@ -92,7 +92,7 @@ p {
 .cajatexto1 {
   width: 100px;
   height: 20px;
-  margin: 10px 0px 0px 0spx;
+  margin: 10px 0px 0px 0px;
 }
 
 .textoBanda {
@@ -100,6 +100,15 @@ p {
   width: 200px;
   height: 30px;
   text-align:center;
+}
+
+.vacio {
+  float: right;
+  width: 96px;
+  height: 24px;
+  margin-top: 15px;
+  padding: 0px 10px;
+  border: 1px solid lightgray;
 }
 
 .circ {
@@ -110,8 +119,8 @@ p {
 
 .circ2 {
   border-radius: 50%;
-  float:left;
-  margin: 0px 20px 0px 0px;
+  float: right;
+  margin: 0px 6px 0px 0px;
 }
 
 .sinColor {

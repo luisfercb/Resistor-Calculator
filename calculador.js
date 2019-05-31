@@ -67,9 +67,10 @@ function getColores() {
     primerColor = codigoColores[primerColor].color;
     segundoColor = codigoColores[segundoColor].color;
     tercerColor = codigoColores[tercerColor].color;
-    let respHtml = "<div class=\"circ2 " + primerColor + "\"></div><div class=\"circ2 " + segundoColor + "\"></div><div class=\"circ2 " + tercerColor + "\"></div>"
+    let respHtml = "<div class=\"circ2 " + tercerColor + "\"></div><div class=\"circ2 " + segundoColor + "\"></div><div class=\"circ2 " + primerColor + "\"></div>"
     console.log(respHtml);
-    document.getElementById('loscolores').innerHTML = respHtml + primerColor + " | " + segundoColor + " | " + tercerColor;
+    document.getElementById('cajonColores').innerHTML = respHtml;
+    document.getElementById('loscolores').innerHTML = "Los colores son: " + primerColor + " | " + segundoColor + " | " + tercerColor;
 }
 
 function bkgndBand(bandain) {
